@@ -8,12 +8,24 @@
         <title>Document</title>
 
 
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/76c40a5f57.js" crossorigin="anonymous"></script>
+        <link href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" rel=" stylesheet">
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="./app.css">
         <script src="./app.js"></script>
     </head>
 
     <body>
+        <div class="classified_details_modal_wrap flexc">
+            <div class="classified_details_modal">
+                <div class="classified_details_modal_title">Details</div>
+            </div>
+        </div>
+
+
         <div class="container flexc">
             <div class="gallery flexc">
                 <div class="gallery_title">Celebrity Images</div>
@@ -47,15 +59,26 @@
             </div>
 
             <div class="classification flexc">
-                <div class="classification_text">Classifier</div>
-                <div class="dropzone_wrapper flexc">
-                    <div class="dropzone_container">
+                <div class="classification_wrap flexc">
+                    <div class="classification_text">Classifier</div>
+                    <form class="dropzone_wrapper flexc">
+                        <input class="img_inp" type="file" hidden>
 
-                    </div>
+                        <div class="dropzone_container flexc">
+                            <div class="dropzone_container_overlay"></div>
+                            <div class="dropzone_container_thumbnail"></div>
 
+
+                            <div class="dropzone_container_content flexc">
+                                <div class="dropzone_container_icon"><i class="fal fa-arrow-to-top"></i></div>
+                                <div class="dropzone_container_text">Drop file here or browse</div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <button class="classify_btn">Classify</button>
                 </div>
-
-                <button class="classify_btn">Classify</button>
             </div>
 
         </div>
