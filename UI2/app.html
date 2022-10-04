@@ -19,19 +19,12 @@
     </head>
 
     <body>
-        <div class="classified_details_modal_wrap flexc">
-            <div class="classified_details_modal">
-                <div class="classified_details_modal_title">Details</div>
-            </div>
-        </div>
-
-
         <div class="container flexc">
             <div class="gallery flexc">
                 <div class="gallery_title">Celebrity Images</div>
 
 
-                <div class="gallery_img_wrap flexc">
+                <div class="gallery_img_wrap flexc matched_face">
                     <div class="gallery_img_con flexc">
                         <img src="./assest/lionel_messi.jpg" alt="">
                     </div>
@@ -79,7 +72,69 @@
 
                     <button class="classify_btn">Classify</button>
                 </div>
+
+                <div class="classified_details_modal_wrap flexc">
+                    <div class="classified_details_modal">
+                        <div class="classified_details_modal_title">Details</div>
+                        <div class="classified_details_content flexc">
+                            <div class="classified_details_content_sub1">
+                                <div class="classified_details_img">
+                                    <img src="./assest/lionel_messi.jpg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="classified_details_content_sub2">
+                                <table>
+                                    <tr>
+                                        <td>Name:</td>
+                                        <td>Lionel Messi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Age:</td>
+                                        <td>2 May 1972 (age 50 years)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Born:</td>
+                                        <td>Italy</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Height:</td>
+                                        <td>1.96 m</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weight:</td>
+                                        <td>118 kg</td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>Profession:</td>
+                                        <td>Footballer</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bio:</td>
+                                        <td>Dwayne Douglas Johnson, also known by his ring name The Rock, is an American actor, producer, businessman, and former professional wrestler.</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="classified_details_modal_closeBtn flexc"><i class="fal fa-times"></i></div>
+                    </div>
+                </div>
+
+
+                <div class="classification_error_msg">
+                    <i class="fal fa-exclamation-triangle"></i> Can't detect eyes or face, try another img
+                </div>
             </div>
+
+        </div>
 
         </div>
 

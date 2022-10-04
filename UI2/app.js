@@ -94,11 +94,11 @@ $(document).ready(() => {
 
 
 
-        $.post("http://127.0.0.1:5000/classify_image", {
-            image_data: data_url
-        }, function (data, status) {
-            console.log(data)
-        })
+        // $.post("http://127.0.0.1:5000/classify_image", {
+        //     image_data: data_url
+        // }, function (data, status) {
+        //     console.log(data, status)
+        // })
 
         // var url = "http://127.0.0.1:5000/classify_image";
 
@@ -109,9 +109,19 @@ $(document).ready(() => {
         // })
 
 
-
+        $(".classified_details_modal_wrap").css('transform', "translateY(0%)");
 
 
     })
 
+
+
+    $(".classified_details_modal_closeBtn").click(() => {
+        $(".classified_details_modal_wrap").css('transform', "translateY(100%)");
+    })
+
+
+
+    // const art_json = JSON.stringify(article_data);
+    // let article_obj = JSON.parse(art_json);
 })
