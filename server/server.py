@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import util
+import util, time
 
 # from flask_cors import CORS
 
@@ -10,11 +10,12 @@ app = Flask(__name__)
 @app.route('/classify_image', methods=['GET', 'POST'])
 def classify_image():
     image_data = request.form['image_data']
-    image_data = image_data.replace(" ", "")
-    print(image_data)
+    # image_data = image_data.replace(" ", "")
+    # print(image_data)
     response = jsonify(util.classify_image(image_data))
     response.headers.add('Access-Control-Allow-Origin', '*')
 
+    time.sleep(4)
     return response
 
 if __name__ == "__main__":

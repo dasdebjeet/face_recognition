@@ -3,143 +3,143 @@
 
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sports Person Classifier</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./dropzone.min.css">
+        <title>Face Recognition</title>
+
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/76c40a5f57.js" crossorigin="anonymous"></script>
+        <link href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" rel=" stylesheet">
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="./app.css">
+
+        <script src="./celeb_data.js"></script>
+        <script src="./app.js"></script>
     </head>
 
     <body>
-        <nav class="navbar navbar-light bg-light justify-content-center">
-            <a class="navbar-brand" href="#">Sports Person Classifier</a>
-        </nav>
+        <div class="container flexc">
+            <div class="gallery flexc">
+                <div class="gallery_title">Celebrity Images</div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col card-wrapper" data-player="lionel_messi">
-                    <div class="card border-0">
-                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
-                            <img class="w-100 h-100" src="./images/messi.jpeg" alt="Card image cap">
-                        </div>
-                        <div class="card-body text-center mt-4">
-                            <h4 class="text-uppercase card-title">Lionel Messi</h4>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col card-wrapper" data-player="maria_sharapova">
-                    <div class="card border-0">
-                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
-                            <img class="w-100 h-100" src="./images/sharapova.jpeg" alt="Card image cap">
-                        </div>
-                        <div class="card-body text-center mt-4">
-                            <h4 class="text-uppercase card-title">Maria Sharapova</h4>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col card-wrapper" data-player="roger_federer">
-                    <div class="card border-0">
-                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
-                            <img class="w-100 h-100" src="./images/federer.jpeg" alt="Card image cap">
-                        </div>
-                        <div class="card-body text-center mt-4">
-                            <h4 class="text-uppercase card-title">Roger Federer</h4>
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col card-wrapper" data-player="serena_williams">
-                    <div class="card border-0">
-                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
-                            <img class="w-100 h-100" src="./images/serena.jpeg" alt="Card image cap">
-                        </div>
-                        <div class="card-body text-center mt-4">
-                            <h4 class="text-uppercase card-title">Serena Williams</h4>
-                            </p>
-                        </div>
+                <div class="gallery_img_wrap flexc" data_content="dwayne_johnson">
+                    <div class="gallery_img_con flexc">
+                        <img src="./assest/dwayne_johnson.jpg">
                     </div>
+                    <div class="gallery_img_name">dwayne johnson</div>
                 </div>
-
-                <div class="col card-wrapper" data-player="virat_kohli">
-                    <div class="card border-0">
-                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
-                            <img class="w-100 h-100" src="./images/virat.jpeg" alt="Card image cap">
-                        </div>
-                        <div class="card-body text-center mt-4">
-                            <h4 class="text-uppercase card-title">Virat Kohli</h4>
-                            </p>
-                        </div>
+                <div class="gallery_img_wrap flexc" data_content="gong_yoo">
+                    <div class="gallery_img_con flexc">
+                        <img src="./assest/gong_yoo.jpg">
                     </div>
+                    <div class="gallery_img_name">gong yoo</div>
+                </div>
+                <div class="gallery_img_wrap flexc" data_content="kevin_hart">
+                    <div class="gallery_img_con flexc">
+                        <img src="./assest/kevin_hart.jpg">
+                    </div>
+                    <div class="gallery_img_name">kevin hart</div>
+                </div>
+                <div class="gallery_img_wrap flexc" data_content="kim_so_hyun">
+                    <div class="gallery_img_con flexc">
+                        <img src="./assest/kim_so_hyun.jpg">
+                    </div>
+                    <div class="gallery_img_name">kim so hyun</div>
                 </div>
 
             </div>
 
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="row">
-                        <div class="col-12 mx-auto">
-                            <form action="/file-upload" class="dropzone" id="dropzone">
-                                <div class="dz-message needsclick">
-                                    <img src="./images/upload.png" width="50vw" height="50vw"><br>
-                                    <span class="note needsclick">Drop files here or click to upload</span>
-                                </div>
-                            </form>
+            <div class="classification flexc">
+                <div class="classification_wrap flexc">
+                    <div class="classification_text">Classifier</div>
+                    <form class="dropzone_wrapper flexc">
+                        <input class="img_inp" type="file" hidden>
+
+                        <div class="dropzone_container flexc">
+                            <div class="dropzone_container_overlay"></div>
+                            <div class="dropzone_container_thumbnail"></div>
+
+
+                            <div class="dropzone_container_content flexc">
+                                <div class="dropzone_container_icon"><i class="fal fa-arrow-to-top"></i></div>
+                                <div class="dropzone_container_text">Drop file here or browse</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-3 mx-auto">
-                            <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+
+                    </form>
+
+                    <button class="classify_btn">Classify</button>
+                </div>
+
+                <div class="classified_details_modal_wrap flexc">
+                    <div class="classified_details_modal">
+                        <div class="classified_details_modal_title">Details</div>
+                        <div class="classified_details_content flexc">
+                            <div class="classified_details_content_sub1">
+                                <div class="classified_details_img"></div>
+                                <div class="classified_details_accuracy">Accuracy <span class="classified_details_accuracy_score">75.65</span>%</div>
+                            </div>
+
+                            <div class="classified_details_content_sub2">
+                                <table>
+                                    <tr>
+                                        <td>Name:</td>
+                                        <td class="classified_details_name">Lionel Messi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Profession:</td>
+                                        <td class="classified_details_profession">Footballer</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Age:</td>
+                                        <td class="classified_details_age">2 May 1972 (age 50 years)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Born:</td>
+                                        <td class="classified_details_born">Italy</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Height:</td>
+                                        <td class="classified_details_height">1.96 m</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weight:</td>
+                                        <td class="classified_details_weight">118 kg</td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td>Bio:</td>
+                                        <td class="classified_details_bio">Dwayne Douglas Johnson, also known by his ring name The Rock, is an American actor, producer, businessman, and former professional wrestler.</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+
                         </div>
+
+
+
+                        <div class="classified_details_modal_closeBtn flexc"><i class="fal fa-times"></i></div>
                     </div>
                 </div>
 
-                <div class="col-sm-8 error" id="error">
-                    <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>
-                </div>
 
-                <div class="col-sm-4" id="resultHolder">
+                <div class="classification_error">
+                    <i class="fal fa-exclamation-triangle"></i> <span class="classification_error_msg">Can't detect eyes or face, try another img</span>
                 </div>
-                <div class="col-sm-4" id="divClassTable">
-                    <table id="classTable">
-                        <tr>
-                            <th>Player</th>
-                            <th>Probability Score</th>
-                        </tr>
-                        <tr>
-                            <td>Leonel Messi</td>
-                            <td id="score_lionel_messi"></td>
-                        </tr>
-                        <tr>
-                            <td>Maria Sharapova</td>
-                            <td id="score_maria_sharapova"></td>
-                        </tr>
-                        <tr>
-                            <td>Rodger Federer</td>
-                            <td id="score_roger_federer"></td>
-                        </tr>
-                        <tr>
-                            <td>Serena Williams</td>
-                            <td id="score_serena_williams"></td>
-                        </tr>
-                        <tr>
-                            <td>Virat Kohli</td>
-                            <td id="score_virat_kohli"></td>
-                        </tr>
-                    </table>
-                </div>
-
             </div>
 
         </div>
 
+        </div>
+
     </body>
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="./dropzone.min.js"></script>
-    <script src="./app.js"></script>
 
 </html>
