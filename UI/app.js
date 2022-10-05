@@ -58,6 +58,9 @@ $(document).ready(() => {
                         'background-size': "cover"
                     })
 
+                    $(".classify_btn").css("width", "calc(100% - 70px)")
+                    $(".remove_img").show()
+
                 };
             };
         }
@@ -109,12 +112,12 @@ $(document).ready(() => {
                 $.post("http://127.0.0.1:5000/classify_image", {
                     image_data: server_data
                 }, function (data, status) {
-                    console.log(data.length, status)
+                    // console.log(data.length, status)
                     if (!data || data.length == 0) {
                         errorMsg_display("Can't detect eyes or face, try another image")
                         return
                     }
-                    console.log(data)
+                    // console.log(data)
                     $(".classified_details_modal_wrap").css('transform', "translateY(0%)");
                     $(".classified_details_img").html('<img src="' + server_data + '">')
 
@@ -165,26 +168,12 @@ $(document).ready(() => {
                             $(".classified_details_bio").text(celeb_obj.celeb[jsn_indx].bio)
                         }
 
-
-                        // let classDictionary = match.class_dictionary;
-                        // for (let personName in classDictionary) {
-                        //     let index = classDictionary[personName];
-                        //     let proabilityScore = match.class_probability[index];
-                        //     let elementName = "#score_" + personName;
-                        //     $(elementName).html(proabilityScore);
-                        // }
                     }
-
-
-
-
 
 
                 }).fail(() => {
                     errorMsg_display("Sever Error")
                 })
-
-
 
             } catch (e) {
                 errorMsg_display("Upload a proper image")
@@ -197,13 +186,7 @@ $(document).ready(() => {
 
     })
 
-
-
-    $(".classified_details_modal_closeBtn").click(() => {
-        $(".classified_details_modal_wrap").css('transform', "translateY(100%)");
-        $(".gallery_img_wrap").removeClass("matched_face")
-
-
+    var rm_thumbnail = () => {
         $(".dropzone_container").removeClass("dropzone_active")
         $(".dropzone_container_icon").html("<i class='fal fa-arrow-to-top'></i>")
         $(".dropzone_container_text").text("Drop file here or browse")
@@ -214,8 +197,27 @@ $(document).ready(() => {
         $(".dropzone_container_thumbnail").css({
             'background': "url('') no-repeat center",
         })
-        server_data = ""
 
+        $(".classify_btn").css("width", "100%")
+        $(".remove_img").hide()
+
+        server_data = ""
+    }
+
+    $(".classified_details_modal_closeBtn").click(() => {
+        $(".classified_details_modal_wrap").css('transform', "translateY(100%)");
+        $(".gallery_img_wrap").removeClass("matched_face")
+
+        rm_thumbnail()
+    })
+
+
+    $(".remove_img").click(() => {
+        $(".dropzone_container").removeClass("dropzone_active")
+        $(".dropzone_container_icon").html("<i class='fal fa-arrow-to-top'></i>")
+        $(".dropzone_container_text").text("Drop file here or browse")
+
+        rm_thumbnail()
     })
 
 

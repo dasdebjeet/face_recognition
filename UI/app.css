@@ -1,6 +1,6 @@
 /* common font */
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
 
 /* selection */
 ::-moz-selection {
@@ -102,9 +102,38 @@ a {
     position: relative;
     background: url('./assest/app_bg.jpg') no-repeat;
     background-size: cover;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
-    overflow: hidden;
+}
+
+.author_credit {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    font-size: 13px;
+    font-family: 'Rajdhani', sans-serif;
+    writing-mode: tb;
+    transform: rotate(180deg);
+    z-index: 999999;
+}
+
+.author_credit::after {
+    position: absolute;
+    top: 110%;
+    left: 12px;
+    content: "";
+    height: 50vh;
+    width: 1px;
+    background: #000000;
+}
+
+.myPortfolio_link {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.myPortfolio_link:hover {
+    color: #71FCAA;
 }
 
 .gallery {
@@ -129,7 +158,6 @@ a {
 
 .gallery_img_wrap {
     flex-direction: column;
-    width: 180px;
     transition: 0.8s all ease;
 }
 
@@ -171,14 +199,15 @@ a {
     background-repeat: no-repeat;
     background-size: 20px 20px;
 
-    width: 100%;
+    width: 180px;
     height: 180px;
+    padding: 20px;
     transition: 0.8s all ease;
 }
 
 .gallery_img_con>img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 5px;
     box-shadow: 5px 5px 15px #c3c3c3ad;
@@ -201,6 +230,7 @@ a {
 .classification {
     flex-direction: column;
     position: relative;
+    overflow: hidden;
 }
 
 .classification_wrap {
@@ -247,14 +277,14 @@ a {
     width: 100%;
     height: 100%;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
     overflow: hidden;
     transition: 0.2s ease all;
 }
 
 .dropzone_active {
-    background: #71FCAA55;
-
+    background: #71FCAA88;
 }
 
 .dropzone_container_overlay {
@@ -337,22 +367,49 @@ a {
 
 }
 
+.button_wrap {
+    justify-content: space-between;
+    width: 400px;
+    height: 50px;
+    margin-top: 50px;
+
+}
+
 .classify_btn {
     background: #ffffff;
-    width: 400px;
-    margin-top: 50px;
-    padding: 15px 10px;
+    width: 100%;
+    height: 100%;
+    padding: 0px 10px;
     text-align: center;
     font-size: 18px;
     font-family: inherit;
     color: #000000;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.2s ease all;
+    transition: 0.1s ease all;
 }
 
 .classify_btn:hover {
     background: #aebbff;
+}
+
+
+.remove_img {
+    display: none;
+    background: #ffffff;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    font-family: inherit;
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s ease all;
+}
+
+.remove_img:hover {
+    background: #ff00007a;
+    color: #ffffff;
 }
 
 .classified_details_modal_wrap {
@@ -485,4 +542,67 @@ a {
     border: 2px solid #ff00007a;
     border-radius: 20px;
     z-index: 9999;
+}
+
+
+
+/* Media Query */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width:481px),
+screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .gallery {
+        width: 100%;
+        height: fit-content;
+        padding: 50px 30px;
+        padding-top: 100px;
+    }
+
+    .gallery_img_con {
+        width: 150px;
+        height: 150px;
+    }
+
+    .matched_face {
+        transform: scale(1.1);
+    }
+
+    .classification {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .classification_wrap {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .classified_details_modal {
+        padding: 30px 50px;
+        height: fit-content;
+    }
+
+    .classified_details_modal_title {
+        text-align: center;
+    }
+
+    .classified_details_modal_wrap {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .classified_details_content {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .classified_details_content_sub2 {
+        padding-top: 30px;
+        padding-left: 0px;
+    }
 }
