@@ -8,7 +8,7 @@ Made in python, HTML, CSS, jquery, and ajax.
 <br><br>
 
 
-<img src="https://github.com/dasdebjeet/face_recognition/blob/main/UI/media/demo.gif?raw=true" alt="demo.gif">
+<img src="./app_how_use.png" alt="demo.gif">
 <br>
 
 **Made with </> by Debjeet. © 2022 all rights reserved.**
