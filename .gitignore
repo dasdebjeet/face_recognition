@@ -1,4 +1,5 @@
 # this will ignore all folders starting with the name "ipynb_checkpoints"
 .ipynb_checkpoints/
 .idea/
+
 __pycache__/
