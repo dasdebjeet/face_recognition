@@ -1,6 +1,8 @@
 numpy
-opencv-python
 seaborn
+
+opencv-python
 PyWavelets
 flask
+
 joblib
