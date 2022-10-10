@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FaceRecognition</title>
+
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/76c40a5f57.js" crossorigin="anonymous"></script>
+        <link href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" rel=" stylesheet">
+
+
+        <!-- css -->
+        <link rel="stylesheet" href="../static/app.css">
+
+
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="../static/celeb_data.js"></script>
+        <script src="../static/app.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container flexc">
+
+            <div class="author_credit">
+                FaceRecognition • Made with <i class="fas fa-heart fa-rotate-90" style="font-size: 10px; margin: 0 5px; color: #71fcaa;"></i> by <a href="https://dasdebjeet.github.io" class="myPortfolio_link">DebjeetDas</a>
+            </div>
+            <div class="gallery flexc">
+                <div class="gallery_title">Celebrity Images</div>
+
+
+                <div class="gallery_img_wrap flexc" data_content="dwayne_johnson">
+                    <div class="gallery_img_con flexc">
+                        <img src="../static/assest/dwayne_johnson.jpg">
+                    </div>
+                    <div class="gallery_img_name">dwayne johnson</div>
+                </div>
+                <div class="gallery_img_wrap flexc" data_content="gong_yoo">
+                    <div class="gallery_img_con flexc">
+                        <img src="../static/assest/gong_yoo.jpg">
+                    </div>
+                    <div class="gallery_img_name">gong yoo</div>
+                </div>
+                <div class="gallery_img_wrap flexc" data_content="kevin_hart">
+                    <div class="gallery_img_con flexc">
+                        <img src="../static/assest/kevin_hart.jpg">
+                    </div>
+                    <div class="gallery_img_name">kevin hart</div>
+                </div>
+                <div class="gallery_img_wrap flexc" data_content="kim_so_hyun">
+                    <div class="gallery_img_con flexc">
+                        <img src="../static/assest/kim_so_hyun.jpg">
+                    </div>
+                    <div class="gallery_img_name">kim so hyun</div>
+                </div>
+
+            </div>
+
+            <div class="classification flexc">
+                <div class="classification_wrap flexc">
+                    <div class="classification_text">Classifier</div>
+                    <form class="dropzone_wrapper flexc">
+                        <input class="img_inp" type="file" hidden>
+
+                        <div class="dropzone_container flexc">
+                            <div class="dropzone_container_overlay"></div>
+                            <div class="dropzone_container_thumbnail"></div>
+
+
+                            <div class="dropzone_container_content flexc">
+                                <div class="dropzone_container_icon"><i class="fal fa-arrow-to-top"></i></div>
+                                <div class="dropzone_container_text">Drop file here or browse</div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div class="button_wrap flexc">
+                        <button class="classify_btn">Classify</button>
+                        <button class="remove_img flexc"><i class="fal fa-trash"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="classified_details_modal_wrap flexc">
+                    <div class="classified_details_modal">
+                        <div class="classified_details_modal_title">Details</div>
+                        <div class="classified_details_content flexc">
+                            <div class="classified_details_content_sub1">
+                                <div class="classified_details_img"></div>
+                                <div class="classified_details_accuracy">Accuracy <span class="classified_details_accuracy_score">75.65</span>%</div>
+                            </div>
+
+                            <div class="classified_details_content_sub2">
+                                <table>
+                                    <tr>
+                                        <td>Name:</td>
+                                        <td class="classified_details_name"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Profession:</td>
+                                        <td class="classified_details_profession"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Age:</td>
+                                        <td class="classified_details_age"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Born:</td>
+                                        <td class="classified_details_born"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Height:</td>
+                                        <td class="classified_details_height"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weight:</td>
+                                        <td class="classified_details_weight"></td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td>Bio:</td>
+                                        <td class="classified_details_bio"></td>
+                                    </tr>
+                                </table>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="classified_details_modal_closeBtn flexc"><i class="fal fa-times"></i></div>
+                    </div>
+                </div>
+
+
+                <div class="classification_error">
+                    <i class="fal fa-exclamation-triangle"></i> <span class="classification_error_msg">Can't detect eyes or face, try another img</span>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+    </body>
+
+</html>
