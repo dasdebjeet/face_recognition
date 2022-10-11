@@ -4,12 +4,12 @@ Face recognition of celebrities using Machine Learning, check it out... 👇👇
 Made in python, HTML, CSS, jquery, and ajax.
 
 
-FaceRecognition is an application which is trained to detect celebrity images with the help of Machine Learning. In this application four celebrity (
+FaceRecognition is an application that is trained to detect celebrity images with the help of Machine Learning. In this application, four celebrities (
 <a href="https://en.wikipedia.org/wiki/Dwayne_Johnson">Dwayne Johnson</a>, 
 <a href="https://en.wikipedia.org/wiki/Gong_Yoo">Gong Yoo</a>,
 <a href="https://en.wikipedia.org/wiki/Kevin_Hart">Kevin Hart</a>, and
-<a href="https://en.wikipedia.org/wiki/Kim_So-hyun">Kim So hyun</a>
-) images has been used to train the model and predict the celebrity.
+<a href="https://en.wikipedia.org/wiki/Kim_So-hyun">Kim So Hyun</a>
+) images have been used to train the model and predict the celebrity.
 
 <br>
 <!-- Website: https://dasdebjeet.github.io -->
